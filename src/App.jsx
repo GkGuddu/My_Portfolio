@@ -5,6 +5,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Services from './components/Services';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -27,9 +28,10 @@ const App = () => {
       <Skills />
       <Services />
       <Contact />
-      
+      <Footer />
 
-      
+
+
     </div>
   );
 };

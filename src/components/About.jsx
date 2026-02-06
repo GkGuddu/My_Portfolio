@@ -1,4 +1,5 @@
 import React from "react";
+import { RESUME_LINK } from "../constants";
 
 const About = () => {
   return (
@@ -55,7 +56,7 @@ const About = () => {
 
             {/* Download CV Button */}
             <a
-              href="/Guddu_Resume.pdf"
+              href={RESUME_LINK}
               download="Guddu_Resume.pdf"
               className="inline-block mt-6 px-6 py-3 bg-green-700 text-white font-medium rounded-md hover:bg-transparent hover:border-1.5 hover:border-green-700 hover:text-green-700 hover:shadow-[0_0_30px_#077b32] transition duration-200"
             >

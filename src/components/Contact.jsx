@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { SOCIAL_LINKS, CONTACT_INFO } from "../constants";
 
 const Contact = () => {
   return (
@@ -45,8 +46,8 @@ const Contact = () => {
               data-aos="fade-left"
             >
               <FaPhoneAlt className="text-green-700 text-xl" />
-              <a href="tel:+917367850872" className="hover:text-green-400 transition-colors">
-                +91 7367850872
+              <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-green-400 transition-colors">
+                {CONTACT_INFO.phone}
               </a>
             </div>
 
@@ -57,8 +58,8 @@ const Contact = () => {
               data-aos-delay="100"
             >
               <FaEnvelope className="text-green-700 text-xl" />
-              <a href="mailto:gkgudd860@gmail.com" className="hover:text-green-400 transition-colors">
-                gkgudd860@gmail.com
+              <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-green-400 transition-colors">
+                {CONTACT_INFO.email}
               </a>
             </div>
 
@@ -70,12 +71,12 @@ const Contact = () => {
             >
               <FaMapMarkerAlt className="text-green-700 text-xl" />
               <a
-                href="https://www.google.com/maps/place/Bhopal,+Madhya+Pradesh,+India"
+                href={CONTACT_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-green-400 transition-colors"
               >
-                Bhopal, Madhya Pradesh, India
+                {CONTACT_INFO.location}
               </a>
             </div>
 
@@ -91,35 +92,25 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="flex mt-4 justify-center md:justify-start">
-              {[
-                { platform: "github", url: "https://github.com/GkGuddu" },
-                { platform: "linkedin", url: "https://www.linkedin.com/in/guddukr73/" },
-                { platform: "twitter", url: "https://x.com/SaahoGuddu?t=ixgdl4AUu5dn8ofpMoPqCA&s=09" },
-                { platform: "instagram", url: "https://www.instagram.com/__.itz_g_k73?igsh=MWVveTF5MnZjejM0MA==" },
-              ].map((social, index) => (
+              {SOCIAL_LINKS.map((social, index) => (
                 <a
-                  key={social.platform}
+                  key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-14 h-14 flex items-center justify-center rounded-full border-2 border-green-700 text-green-700 hover:bg-green-700 hover:text-black hover:scale-125 transition duration-200 mx-3"
+                  className="w-14 h-14 flex items-center justify-center rounded-full border-2 border-green-700 text-green-700 hover:bg-green-700 hover:text-black hover:scale-125 transition duration-200 mx-3 text-2xl"
                   data-aos="fade-up"
                   data-aos-duration="1500"
                   data-aos-delay={1300 + index * 100}
                 >
-                  <i className={`fa-brands fa-${social.platform} text-2xl`}></i>
+                  {social.icon}
                 </a>
               ))}
             </div>
           </div>
         </div>
       </section>
-      {/* Footer Paragraph Centered */}
-      <footer className="w-full fixed bottom-0 left-0 bg-gray-900 text-gray-400 py-4 flex justify-center items-center">
-  <p className="text-center">
-    &copy; {new Date().getFullYear()} Guddu Kumar. All rights reserved.
-  </p>
-</footer>
+
     </>
   );
 };

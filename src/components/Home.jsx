@@ -1,12 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
+import { HERO_TEXTS } from "../constants";
 
 const Home = () => {
-  const texts = [
-    "Frontend Developer",
-    "Web Developer",
-    "MERN Stack Developer",
-    "Full Stack Engineer",
-  ];
+
   const [currentText, setCurrentText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -29,7 +25,7 @@ const Home = () => {
   // Role typewriter
   useEffect(() => {
     const typeWriter = () => {
-      const currentWord = texts[textIndex];
+      const currentWord = HERO_TEXTS[textIndex];
       if (!isDeleting) {
         if (currentText.length < currentWord.length) {
           setCurrentText(currentWord.slice(0, currentText.length + 1));
@@ -41,7 +37,7 @@ const Home = () => {
           setCurrentText(currentText.slice(0, -1));
         } else {
           setIsDeleting(false);
-          setTextIndex((prev) => (prev + 1) % texts.length);
+          setTextIndex((prev) => (prev + 1) % HERO_TEXTS.length);
         }
       }
     };

@@ -1,40 +1,8 @@
 import React from "react";
-import { FaCode, FaPaintBrush, FaDatabase, FaCogs } from "react-icons/fa";
-import { SiFigma, SiMongodb } from "react-icons/si";
+import { SERVICES } from "../constants";
 
 const Services = () => {
-  const services = [
-    {
-      title: "Web Development",
-      desc: "Building responsive and dynamic web applications.",
-      icon: <FaCode className="text-4xl text-green-700" />,
-    },
-    {
-      title: "Frontend Design",
-      desc: "Creating visually appealing and user-friendly interfaces.",
-      icon: <FaPaintBrush className="text-4xl text-green-700" />,
-    },
-    {
-      title: "Backend Development",
-      desc: "Developing robust server-side applications with Node.js and Express.",
-      icon: <FaDatabase className="text-4xl text-green-700" />,
-    },
-    {
-      title: "MERN Stack Solutions",
-      desc: "Delivering end-to-end solutions using the MERN stack.",
-      icon: <FaCogs className="text-4xl text-green-700" />,
-    },
-    {
-      title: "UI/UX (Figma)",
-      desc: "Designing user-centric interfaces and prototypes with Figma.",
-      icon: <SiFigma className="text-4xl text-green-700" />,
-    },
-    {
-      title: "Database Management",
-      desc: "Handling databases efficiently using MongoDB and modern tools.",
-      icon: <SiMongodb className="text-4xl text-green-700" />,
-    },
-  ];
+
 
   return (
     <section
@@ -52,7 +20,7 @@ const Services = () => {
 
         {/* Grid of Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {SERVICES.map((service, index) => (
             <div
               key={service.title}
               className="bg-gray-800/70 p-6 rounded-xl shadow-lg 

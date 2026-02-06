@@ -1,44 +1,8 @@
 import React from "react";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaNodeJs,
-  FaGithub,
-  FaFigma,
-} from "react-icons/fa";
-import {
-  SiJavascript,
-  SiMongodb,
-  SiExpress,
-  SiTailwindcss,
-  SiMysql,
-  SiCplusplus,
-  SiNextdotjs,
-} from "react-icons/si";
-import { MdOutlineSchema } from "react-icons/md"; // For DSA
-import { RiFlowChart } from "react-icons/ri"; // For OOPS
+import { SKILLS } from "../constants";
 
 const Skills = () => {
-  const skills = [
-    { name: "HTML", icon: <FaHtml5 className="text-orange-600 text-5xl" /> },
-    { name: "CSS", icon: <FaCss3Alt className="text-blue-600 text-5xl" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-5xl" /> },
-    { name: "JavaScript", icon: <SiJavascript className="text-yellow-500 text-5xl" /> },
-    { name: "React", icon: <FaReact className="text-cyan-400 text-5xl" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="text-white text-5xl" /> },
-    { name: "Node.js", icon: <FaNodeJs className="text-green-600 text-5xl" /> },
-    { name: "Express.js", icon: <SiExpress className="text-gray-400 text-5xl" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-700 text-5xl" /> },
-    { name: "MySQL", icon: <SiMysql className="text-yellow-400 text-5xl" /> },
-    { name: "GitHub", icon: <FaGithub className="text-white text-5xl" /> },
-    { name: "Figma", icon: <FaFigma className="text-purple-500 text-5xl" /> },
-    { name: "C/C++", icon: <SiCplusplus className="text-blue-500 text-5xl" /> },
 
-    // ➕ Added New Skills
-    { name: "OOPS", icon: <RiFlowChart className="text-pink-400 text-5xl" /> },
-    { name: "DSA", icon: <MdOutlineSchema className="text-red-400 text-5xl" /> },
-  ];
 
   return (
     <section
@@ -55,7 +19,7 @@ const Skills = () => {
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          {skills.map((skill, index) => (
+          {SKILLS.map((skill, index) => (
             <div
               key={skill.name}
               className="bg-gray-800/70 p-6 rounded-xl shadow-lg 
