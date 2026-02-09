@@ -65,9 +65,9 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="w-full min-h-[100vh] flex items-center justify-center px-6 md:px-16 bg-gray-900 pt-[10vh]"
+      className="w-full min-h-[100vh] flex items-start md:items-center justify-center px-6 md:px-16 bg-gray-900 pt-32 md:pt-0"
     >
-      <div className="flex flex-col md:flex-row items-center justify-between w-full gap-12 max-w-[1200px] mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full gap-6 md:gap-12 max-w-[1200px] mx-auto">
         {/* Left: Text Section */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
           <h1
@@ -109,7 +109,7 @@ const Home = () => {
           {/* Let's Go Button */}
           <a
             href="#contact"
-            className="mt-8 px-6 py-3 bg-green-700 text-white rounded-md hover:bg-transparent hover:border-2 hover:border-green-700 hover:text-green-700 hover:shadow-[0_0_40px_#077b32] transition duration-200 cursor-pointer"
+            className="mt-4 md:mt-8 px-6 py-3 bg-green-700 text-white rounded-md hover:bg-transparent hover:border-2 hover:border-green-700 hover:text-green-700 hover:shadow-[0_0_40px_#077b32] transition duration-200 cursor-pointer"
             data-aos="zoom-in"
             data-aos-duration="1500"
             data-aos-delay="1800"
