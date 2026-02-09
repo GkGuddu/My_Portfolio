@@ -26,7 +26,7 @@ const About = () => {
             data-aos-duration="1500"
           >
             <img
-              src="/Profile.png"
+              src="/My_Portfolio/Profile.png"
               alt="Profile"
               className="w-full h-full object-cover"
             />

@@ -17,7 +17,7 @@ const Contact = () => {
             data-aos-duration="1500"
           >
             <img
-              src="/contact.png"
+              src="/My_Portfolio/contact.png"
               alt="Contact"
               className="rounded-xl shadow-lg max-w-xs md:max-w-sm lg:max-w-md
                          transform hover:shadow-green-700/50

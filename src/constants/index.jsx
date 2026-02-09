@@ -67,7 +67,7 @@ export const PROJECTS = [
     {
         title: "GP MiniMart",
         description: "A full-stack e-commerce platform for groceries and daily essentials. Features include user authentication, product search, cart management, and admin dashboard.",
-        image: "/GP_MiniMart.png",
+        image: "/My_Portfolio/GP_MiniMart.png",
         techStack: ["React", "Node.js", "Express", "MongoDB", "Redux"],
         link: "#",
         github: "#",
@@ -146,4 +146,4 @@ export const SOCIAL_LINKS = [
 ];
 
 // Resume Link
-export const RESUME_LINK = "/Resume.pdf";
+export const RESUME_LINK = "/My_Portfolio/Resume.pdf";
