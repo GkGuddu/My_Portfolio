@@ -6,9 +6,9 @@ const Projects = () => {
     return (
         <section
             id="projects"
-            className="w-full min-h-[90vh] flex items-center justify-center py-16 bg-gray-900"
+            className="w-full min-h-[90vh] flex items-center justify-center py-16 px-6 md:px-16 bg-gray-900"
         >
-            <div className="w-[90%] flex flex-col items-center">
+            <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center">
                 <h2
                     className="text-3xl md:text-4xl font-bold mb-12 text-white"
                     data-aos="fade-up"
