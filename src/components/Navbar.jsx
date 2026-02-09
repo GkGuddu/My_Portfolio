@@ -46,13 +46,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 bg-gray-100/20 backdrop-blur-md transition-shadow duration-300 ${scrolled ? "shadow-lg" : ""
+      className={`fixed top-0 w-full z-50 bg-gray-100/20 backdrop-blur-md transition-shadow duration-300 flex justify-center px-6 md:px-16 ${scrolled ? "shadow-lg" : ""
         }`}
       style={{ height: `${navHeight}px` }}
     >
-      <div className="flex justify-between items-center h-full px-4 md:px-8">
+      <div className="flex justify-between items-center w-full h-full max-w-[1200px]">
         {/* Logo */}
-        <div className="text-2xl md:text-3xl font-bold text-gray-900">
+        <div className="text-2xl md:text-3xl font-bold text-white">
           Guddu <span className="text-green-700">Kumar</span>
         </div>
 
@@ -66,7 +66,7 @@ const Navbar = () => {
                 onClick={() => handleClick(id)}
                 className={`relative text-lg font-medium transition duration-300 group ${activeLink === id
                   ? "text-green-700"
-                  : "text-gray-900 hover:text-green-700"
+                  : "text-white hover:text-green-700"
                   }`}
               >
                 {link}
@@ -78,7 +78,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-900 text-3xl focus:outline-none"
+          className="md:hidden text-white text-3xl focus:outline-none"
           onClick={() => setIsOpen(true)}
           aria-label="Open Menu"
         >
@@ -88,11 +88,11 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen bg-gray-100/95 backdrop-blur-md flex flex-col items-center justify-center transition-transform duration-300 ${isOpen ? "translate-y-0" : "-translate-y-full"
+        className={`fixed top-0 left-0 w-full h-screen bg-gray-900/95 backdrop-blur-md flex flex-col items-center justify-center transition-transform duration-300 ${isOpen ? "translate-y-0" : "-translate-y-full"
           }`}
       >
         <button
-          className="absolute top-6 right-6 text-gray-900 text-3xl focus:outline-none"
+          className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
           onClick={() => setIsOpen(false)}
           aria-label="Close Menu"
         >
@@ -107,7 +107,7 @@ const Navbar = () => {
               onClick={() => handleClick(id)}
               className={`text-2xl py-4 w-full text-center transition duration-200 ${activeLink === id
                 ? "text-green-700 bg-gray-200"
-                : "text-gray-900 hover:bg-green-700 hover:text-white"
+                : "text-white hover:bg-green-700 hover:text-white"
                 }`}
             >
               {link}
