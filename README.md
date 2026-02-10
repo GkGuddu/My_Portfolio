@@ -82,6 +82,4 @@ src/
 - **LinkedIn**: [Guddu Kumar](https://www.linkedin.com/in/guddukr73/)
 - **GitHub**: [GkGuddu](https://github.com/GkGuddu)
 
-## 📄 License
 
-This project is licensed under the MIT License.
