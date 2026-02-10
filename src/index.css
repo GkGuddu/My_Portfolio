@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Font */
 body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Pulse Animation */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -21,24 +24,30 @@ body {
   }
 }
 
+/* Base Layer Fix */
 @layer base {
 
   html,
   body {
-    overscroll-behavior: none;
     background-color: #111;
-    /* match your app bg */
+    overscroll-behavior-y: auto;
+    /* allow vertical scroll */
   }
 }
 
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
+/* Prevent horizontal scroll only */
 html,
 body {
   overflow-x: hidden;
+  overflow-y: auto;
+  /* IMPORTANT — enables vertical scrolling */
   width: 100%;
+  min-height: 100%;
 }
 
 /* Custom Scrollbar */
@@ -52,13 +61,10 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #15803d;
-  /* Green-700 */
   border-radius: 10px;
   border: 2px solid #111;
-  /* Adds spacing around thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #166534;
-  /* Green-800 */
 }

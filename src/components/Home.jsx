@@ -14,7 +14,7 @@ const Home = () => {
     `  name: "Guddu",`,
     `  role: "MERN Stack Developer",`,
     `  location: "India",`,
-    `  email: "guddu@example.com",`,
+    `  email: "gkgudd860@gmail.com",`,
     `  skills: ["MongoDB", "Express", "React", "Node.js"],`,
     `};`,
   ];
