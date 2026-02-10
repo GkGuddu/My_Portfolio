@@ -31,8 +31,27 @@ body {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   overflow-x: hidden;
   width: 100%;
+  /* Custom Scrollbar for Webkit */
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(21, 128, 61, 0.8);
+  /* Green-700 */
+  border-radius: 20px;
 }
