@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="w-full min-h-[90vh] flex items-center justify-center py-16 px-6 md:px-16 bg-gray-900"
+      className="w-full min-h-[100vh] flex items-center justify-center py-16 px-6 md:px-16 bg-gray-900"
     >
       <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center">
         {/* Section Title */}

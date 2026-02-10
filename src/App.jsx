@@ -22,7 +22,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-black min-h-screen text-white font-poppins">
+    <div className="bg-black min-h-screen text-white font-poppins overflow-x-hidden">
       <Navbar />
       <Home />
       <About />
