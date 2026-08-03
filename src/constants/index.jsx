@@ -70,7 +70,7 @@ export const PROJECTS = [
         image: "/My_Portfolio/GP_MiniMart.png",
         techStack: ["React", "Node.js", "Express", "MongoDB", "Redux"],
         link: "https://gp-mini-mart.vercel.app",
-        github: "#",
+        github: "https://github.com/GkGuddu/GP-MiniMart",
     },
     {
         title: "Realtime Chat Application",
