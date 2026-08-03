@@ -69,7 +69,7 @@ export const PROJECTS = [
         description: "A full-stack e-commerce platform for groceries and daily essentials. Features include user authentication, product search, cart management, and admin dashboard.",
         image: "/My_Portfolio/GP_MiniMart.png",
         techStack: ["React", "Node.js", "Express", "MongoDB", "Redux"],
-        link: "#",
+        link: "https://gp-mini-mart.vercel.app",
         github: "#",
     },
     {
