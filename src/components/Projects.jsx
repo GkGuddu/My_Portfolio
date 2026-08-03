@@ -35,26 +35,39 @@ const Projects = () => {
                                     alt={project.title}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-green-600 hover:border-green-600 transition-all duration-300 shadow-lg"
-                                        title="View Code"
-                                    >
-                                        <FaGithub size={20} />
-                                    </a>
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-green-600 hover:border-green-600 transition-all duration-300 shadow-lg"
-                                        title="Live Demo"
-                                    >
-                                        <FaExternalLinkAlt size={20} />
-                                    </a>
-                                </div>
+                                {project.link === "#" || project.github === "#" ? (
+                                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 backdrop-blur-md">
+                                        <div className="px-5 py-3 bg-green-950/45 border border-green-500/40 rounded-xl text-center transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.2)]">
+                                            <span className="text-lg font-extrabold text-green-400 tracking-wider uppercase animate-pulse block">
+                                                Coming Soon
+                                            </span>
+                                            <span className="text-xs text-gray-300 font-medium block mt-1">
+                                                Under Development
+                                            </span>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-green-600 hover:border-green-600 transition-all duration-300 shadow-lg"
+                                            title="View Code"
+                                        >
+                                            <FaGithub size={20} />
+                                        </a>
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-green-600 hover:border-green-600 transition-all duration-300 shadow-lg"
+                                            title="Live Demo"
+                                        >
+                                            <FaExternalLinkAlt size={20} />
+                                        </a>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="p-6">
