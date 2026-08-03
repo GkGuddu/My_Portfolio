@@ -74,17 +74,9 @@ export const PROJECTS = [
     },
     {
         title: "Realtime Chat Application",
-        description: "A real-time messaging app enabling instant communication between users. Includes features like one-on-one chat, group chats, and online status indicators.",
+        description: "(Coming Soon) A real-time messaging app enabling instant communication between users. Includes features like one-on-one chat, group chats, and online status indicators.",
         image: "https://cdn.prod.website-files.com/62a87a50f7326e83a463e90f/649bf9555950c02faf4cc847_439.png", // Replace with actual project image
         techStack: ["React", "Socket.io", "Node.js", "Express", "Tailwind CSS"],
-        link: "#",
-        github: "#",
-    },
-    {
-        title: "Doctor Appointment",
-        description: "A healthcare platform for booking doctor appointments. Patients can view doctors, check availability, and book slots. Doctors can manage their schedules.",
-        image: "https://www.doctorsapp.in/uploads/blog_image/images/040226_5342_blog_image.png", // Replace with actual project image
-        techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
         link: "#",
         github: "#",
     },
