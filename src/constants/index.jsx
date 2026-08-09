@@ -90,9 +90,9 @@ export const PROJECTS = [
     },
     {
         title: "Cross Road Game",
-        description: "An engaging browser-based Cross Road Game with interactive gameplay mechanics.",
+        description: "An engaging 3D arcade-style Cross Road game built with Next.js. Features interactive gameplay, smooth animations, obstacle avoidance, and dynamic score tracking.",
         image: "https://www.sourcecodester.com/sites/default/files/images/razormist/crossy-road-clone-game-using-html-css-in-threejs.jpg", 
-        techStack: ["HTML", "CSS", "JavaScript"],
+        techStack: ["Next.js", "React", "Tailwind CSS", "Three.js", "JavaScript"],
         link: "https://cross-road-game-amber.vercel.app",
         github: "https://github.com/GkGuddu/Cross-Road-Game",
     },
