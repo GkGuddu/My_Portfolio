@@ -93,7 +93,7 @@ export const PROJECTS = [
         description: "An engaging browser-based Cross Road Game with interactive gameplay mechanics.",
         image: "https://www.sourcecodester.com/sites/default/files/images/razormist/crossy-road-clone-game-using-html-css-in-threejs.jpg", 
         techStack: ["HTML", "CSS", "JavaScript"],
-        link: "https://gkguddu.github.io/Cross-Road-Game/",
+        link: "https://cross-road-game-amber.vercel.app",
         github: "https://github.com/GkGuddu/Cross-Road-Game",
     },
 ];
