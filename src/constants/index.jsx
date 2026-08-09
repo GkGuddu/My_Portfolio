@@ -18,6 +18,8 @@ import {
     FaTwitter,
     FaInstagram,
     FaJava,
+    FaLaptopCode,
+    FaLayerGroup,
 } from "react-icons/fa";
 import {
     SiJavascript,
@@ -101,7 +103,17 @@ export const PROJECTS = [
 // Services Data
 export const SERVICES = [
     {
-        title: "MERN Stack Solutions",
+        title: "Full Stack Developer",
+        desc: "Building end-to-end scalable web applications using modern frontend and backend tech.",
+        icon: <FaLayerGroup className="text-4xl text-green-700" />,
+    },
+    {
+        title: "Software Developer",
+        desc: "Designing and engineering efficient algorithms, data structures, and maintainable software systems.",
+        icon: <FaLaptopCode className="text-4xl text-green-700" />,
+    },
+    {
+        title: "MERN Stack Developer",
         desc: "Delivering end-to-end solutions using the MERN stack.",
         icon: <FaCogs className="text-4xl text-green-700" />,
     },
@@ -111,12 +123,7 @@ export const SERVICES = [
         icon: <FaCode className="text-4xl text-green-700" />,
     },
     {
-        title: "App Development",
-        desc: "Building cross-platform mobile applications using React Native.",
-        icon: <FaReact className="text-4xl text-green-700" />,
-    },
-    {
-        title: "Frontend Design",
+        title: "Frontend Developer",
         desc: "Creating visually appealing and user-friendly interfaces.",
         icon: <FaPaintBrush className="text-4xl text-green-700" />,
     },
@@ -129,11 +136,6 @@ export const SERVICES = [
         title: "Database Management",
         desc: "Handling databases efficiently using MongoDB and modern tools.",
         icon: <SiMongodb className="text-4xl text-green-700" />,
-    },
-    {
-        title: "UI/UX (Figma)",
-        desc: "Designing user-centric interfaces and prototypes with Figma.",
-        icon: <SiFigma className="text-4xl text-green-700" />,
     },
 ];
 
