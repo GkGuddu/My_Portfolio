@@ -1,122 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import { FaBars, FaTimes, FaLock } from "react-icons/fa";
 import { NAV_LINKS } from "../constants";
 
-const Navbar = () => {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("home");
-  const [scrolled, setScrolled] = useState(false);
+  const menuButton = useRef(null);
 
-
-  const navHeight = 80; // Approx 10vh in pixels
-
-  // Shadow effect and scroll spy
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) setScrolled(true);
-      else setScrolled(false);
-
-      NAV_LINKS.forEach((link) => {
-        const section = document.getElementById(link.toLowerCase());
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= navHeight && rect.bottom >= navHeight) {
-            setActiveLink(link.toLowerCase());
-          }
-        }
-      });
+    if (!isOpen) return;
+    const onEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        menuButton.current?.focus();
+      }
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Smooth scroll that offsets navbar height
-  const handleClick = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const elementPosition = element.offsetTop;
-      window.scrollTo({
-        top: elementPosition - navHeight,
-        behavior: "smooth",
-      });
-    }
-    setIsOpen(false);
-  };
+    window.addEventListener("keydown", onEscape);
+    return () => window.removeEventListener("keydown", onEscape);
+  }, [isOpen]);
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 bg-gray-100/20 backdrop-blur-md transition-shadow duration-300 flex justify-center px-6 md:px-16 ${scrolled ? "shadow-lg" : ""
-        }`}
-      style={{ height: `${navHeight}px` }}
-    >
-      <div className="flex justify-between items-center w-full h-full max-w-[1200px]">
-        {/* Logo */}
-        <div className="text-2xl md:text-3xl font-bold text-white">
-          Guddu <span className="text-green-700">Kumar</span>
+    <header className="site-header">
+      <nav className="adri-nav" aria-label="Main navigation">
+        <a className="adri-wordmark" href="#home">Guddu Kumar</a>
+        <div className="adri-nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a className="adri-button adri-button-dark" href="#contact">Work with me</a>
         </div>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
-          {NAV_LINKS.map((link) => {
-            const id = link.toLowerCase();
-            return (
-              <button
-                key={id}
-                onClick={() => handleClick(id)}
-                className={`relative text-lg font-medium transition duration-300 group ${activeLink === id
-                  ? "text-green-700"
-                  : "text-white hover:text-green-700"
-                  }`}
-              >
-                {link}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-700 transition-all duration-200 group-hover:w-full"></span>
-              </button>
-            );
-          })}
+        <div className="adri-nav-actions">
+        <a className="adri-admin-button" href={`${import.meta.env.BASE_URL}admin`} aria-label="Admin login" title="Admin login"><FaLock aria-hidden="true" /></a>
+        <button ref={menuButton} className="adri-menu-toggle" type="button" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close Menu" : "Open Menu"} aria-expanded={isOpen} aria-controls="mobile-menu">
+          {isOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
+        </button>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white text-3xl focus:outline-none"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open Menu"
-        >
-          <FaBars />
-        </button>
-      </div>
-
-      {/* Mobile Dropdown */}
-      <div
-        className={`fixed top-0 left-0 w-full h-screen bg-gray-900/95 backdrop-blur-md flex flex-col items-center justify-center transition-transform duration-300 ${isOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
-      >
-        <button
-          className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
-          onClick={() => setIsOpen(false)}
-          aria-label="Close Menu"
-        >
-          <FaTimes />
-        </button>
-
-        {NAV_LINKS.map((link) => {
-          const id = link.toLowerCase();
-          return (
-            <button
-              key={id}
-              onClick={() => handleClick(id)}
-              className={`text-2xl py-4 w-full text-center transition duration-200 ${activeLink === id
-                ? "text-green-700 bg-gray-200"
-                : "text-white hover:bg-green-700 hover:text-white"
-                }`}
-            >
-              {link}
-            </button>
-          );
-        })}
-      </div>
-    </nav>
+        <div id="mobile-menu" className="adri-mobile-menu" hidden={!isOpen}>
+          {NAV_LINKS.map((link) => <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setIsOpen(false)}>{link}</a>)}
+        </div>
+      </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}

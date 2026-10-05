@@ -1,72 +1,31 @@
-import React from "react";
-import { RESUME_LINK } from "../constants";
+import TiltCard from "./TiltCard";
+import { usePortfolioContent } from "../use-portfolio-content";
 
-const About = () => {
+export default function About() {
+  const { content } = usePortfolioContent();
   return (
-    <section
-      id="about"
-      className="w-full min-h-[100vh] flex items-center justify-center py-16 px-6 md:px-16 bg-gray-900"
-    >
-      <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center">
-        {/* Section Title */}
-        <h2
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
-          data-aos="fade-up"
-          data-aos-duration="1500"
-        >
-          About <span className="text-green-700">Me</span>
-        </h2>
-
-        {/* Flex Layout */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-20 md:gap-32">
-          {/* Left: Profile Image */}
-          <div
-            className="w-[300px] h-[300px] md:w-[380px] md:h-[380px] rounded-xl overflow-hidden hover:bg-transparent hover:border-1.5 hover:border-green-700/50 hover:text-green-700/50 hover:shadow-[0_0_30px_#077b32] transition duration-200 hover:-translate-y-2  cursor-pointer"
-            data-aos="fade-right"
-            data-aos-duration="1500"
-          >
-            <img
-              src="/My_Portfolio/Profile.png"
-              alt="Profile"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Right: About Text */}
-          <div
-            className="max-w-[650px] text-center md:text-left"
-            data-aos="fade-left"
-            data-aos-duration="1500"
-          >
-            <p className="text-sm md:text-base leading-relaxed">
-              I'm a passionate web developer with expertise in creating dynamic
-              and responsive web applications. With a strong foundation in
-              frontend technologies and the <b>MERN stack</b>, I strive to
-              deliver user-friendly and visually appealing solutions.
-              <br />
-              <br />
-              Currently, I’m sharpening my <b>JavaScript</b> skills to write
-              cleaner, more efficient, and scalable code — the key pillar behind
-              React, Node.js, and modern web development.
-              <br />
-              <br />
-              My goal is to continuously learn and adapt to new technologies to
-              build innovative projects.
-            </p>
-
-            {/* Download CV Button */}
-            <a
-              href={RESUME_LINK}
-              download="Guddu_Resume.pdf"
-              className="inline-block mt-6 px-6 py-3 bg-green-700 text-white font-medium rounded-md hover:bg-transparent hover:border-1.5 hover:border-green-700 hover:text-green-700 hover:shadow-[0_0_30px_#077b32] transition duration-200"
-            >
-              Download CV
-            </a>
-          </div>
+    <section id="about" className="adri-approach" aria-labelledby="about-title">
+      <div className="adri-approach-visual">
+        <div className="approach-orbit" aria-hidden="true" />
+        <TiltCard className="approach-browser" intensity={5}>
+          <div className="approach-browser-bar"><span aria-hidden="true">● ● ●</span><span>EstateHub — a project by Guddu</span></div>
+          <img src={`${import.meta.env.BASE_URL}EstateHub.png`} alt="EstateHub real estate website, designed and developed by Guddu" loading="lazy" width="960" height="600" />
+        </TiltCard>
+        <div className="approach-code-note" aria-hidden="true"><span>&lt;/&gt;</span><p>A little curiosity.<br />A lot of possibility.</p></div>
+        <p className="approach-caption">FROM AN IDEA TO SOMETHING REAL.</p>
+      </div>
+      <div className="adri-approach-copy reveal-3d">
+        <h2 id="about-title">My Approach</h2>
+        <div>
+          <h3>Thoughtful development</h3>
+          <p>I’m a web developer with a strong foundation in frontend technologies and the MERN stack. I care about the details that make an application feel intuitive, responsive, and easy to use.</p>
         </div>
+        <div>
+          <h3>Always learning</h3>
+          <p>I’m sharpening my JavaScript skills to write cleaner, more efficient code. From the first interface to the systems behind it, I keep learning and building with purpose.</p>
+        </div>
+        <a className="adri-text-link" href={content.resumeUrl} download>Download my CV <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   );
-};
-
-export default About;
+}

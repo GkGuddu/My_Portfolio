@@ -1,40 +1,30 @@
-import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
+import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Services from './components/Services';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import MotionProvider from './components/MotionProvider';
 
 const App = () => {
-  useEffect(() => {
-    AOS.init({ offset: 0 });
-
-    // Scroll to the home section on page load/refresh
-    const homeSection = document.getElementById('home');
-    if (homeSection) {
-      homeSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
-
   return (
-    <div className="bg-black min-h-screen text-white font-poppins overflow-x-hidden">
-      <Navbar />
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
-      <Services />
-      <Contact />
-      <Footer />
-
-
-
-    </div>
+    <MotionProvider>
+      <div className="site-content">
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <Navbar />
+        <main id="main-content" tabIndex={-1}>
+          <Home />
+          <About />
+          <Skills />
+          <Projects />
+          <Education />
+          <Services />
+          <Contact />
+        </main>
+      </div>
+    </MotionProvider>
   );
 };
 

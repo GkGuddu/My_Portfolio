@@ -1,0 +1,71 @@
+.admin-page { min-height: 100vh; padding: 42px clamp(22px, 6vw, 92px); background: #1e2130; color: #ece9e5; }
+.admin-login, .admin-dashboard { width: min(100%, 1080px); margin: 0 auto; }
+.admin-login { max-width: 560px; padding-top: 12vh; }
+.admin-kicker { color: #c6c2cd; font-size: 10px; letter-spacing: .18em; margin: 0 0 14px; }
+.admin-page h1, .admin-page h2 { font-family: "Libre Caslon Display", Georgia, serif; font-weight: 400; letter-spacing: -.035em; }
+.admin-page h1 { font-size: clamp(48px, 7vw, 88px); line-height: 1; margin: 0; }
+.admin-page h1 span { color: #edb7b3; }
+.admin-muted { max-width: 430px; color: #c6c2cd; line-height: 1.6; margin: 25px 0 36px; }
+.admin-login-form { display: grid; gap: 10px; }
+.admin-login-form label { color: #c6c2cd; font-size: 12px; }
+.admin-login-form input { width: 100%; box-sizing: border-box; padding: 15px 16px; border: 1px solid #c6c2cd80; border-radius: 8px; background: #ece9e514; color: #ece9e5; outline: none; }
+.admin-login-form input:focus { border-color: #edb7b3; }
+.admin-login-form button { justify-self: start; margin-top: 10px; padding: 14px 22px; border: 0; border-radius: 999px; background: #edb7b3; color: #1e2130; font-weight: 600; }
+.admin-login-form button:disabled, .admin-quiet-button:disabled, .admin-delete-button:disabled { cursor: wait; opacity: .6; }
+.admin-header { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: 27px; border-bottom: 1px solid #ece9e53d; }
+.admin-header-actions { display: flex; gap: 10px; }
+.admin-primary-tabs { display: flex; gap: 9px; padding: 20px 0 8px; border-bottom: 1px solid #ece9e53d; }
+.admin-primary-tabs button, .admin-editor-tabs button { padding: 9px 14px; border: 1px solid #ece9e54d; border-radius: 999px; background: transparent; color: #c6c2cd; font-size: 12px; }
+.admin-primary-tabs button.is-active, .admin-editor-tabs button.is-active { background: #edb7b3; border-color: #edb7b3; color: #1e2130; }
+.admin-primary-tabs button span { display: inline-grid; min-width: 18px; height: 18px; place-items: center; margin-left: 4px; border-radius: 50%; background: #ece9e51a; font-size: 10px; }
+.admin-editor { padding-top: 25px; }
+.admin-editor-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.admin-form-section { display: grid; gap: 16px; }
+.admin-editor-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
+.admin-add-button { padding: 16px; border: 1px dashed #c6c2cd; border-radius: 12px; color: #edb7b3; background: #ece9e509; }
+.admin-add-button:hover { background: #ece9e51a; }
+.admin-add-button:disabled { opacity: .5; cursor: not-allowed; }
+.admin-form-section select { width: 100%; padding: 12px; border: 1px solid #c6c2cd66; border-radius: 7px; background: #1e2130; color: #ece9e5; }
+.admin-edit-card { min-width: 0; }
+.admin-form-section input[type="file"]::file-selector-button { border: 0; border-radius: 6px; padding: 8px 12px; margin-right: 12px; background: #c6c2cd; color: #1e2130; cursor: pointer; }
+.admin-editor-fields > .admin-save-button { margin-top: 24px; }
+.admin-form-intro { margin: 0 0 2px; color: #c6c2cd; font-size: 13px; line-height: 1.6; }
+.admin-form-section label, .admin-edit-card label { display: grid; gap: 7px; color: #c6c2cd; font-size: 11px; letter-spacing: .02em; }
+.admin-form-section input, .admin-form-section textarea, .admin-edit-card input, .admin-edit-card textarea { width: 100%; box-sizing: border-box; padding: 12px 13px; border: 1px solid #c6c2cd66; border-radius: 7px; background: #ece9e50c; color: #ece9e5; outline: none; resize: vertical; }
+.admin-form-section input:focus, .admin-form-section textarea:focus, .admin-edit-card input:focus, .admin-edit-card textarea:focus { border-color: #edb7b3; }
+.admin-edit-card { display: grid; gap: 14px; margin: 0; padding: 18px; border: 1px solid #ece9e53d; border-radius: 14px; }
+.admin-edit-card legend { padding: 0 7px; color: #edb7b3; font-family: "Libre Caslon Display", Georgia, serif; font-size: 24px; }
+.admin-field-hint { color: #8e8997; font-size: 10px; letter-spacing: 0; }
+.admin-two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.admin-save-button { justify-self: start; margin-top: 5px; padding: 13px 20px; border: 0; border-radius: 999px; background: #edb7b3; color: #1e2130; font-weight: 600; }
+.admin-save-button:disabled { cursor: wait; opacity: .65; }
+.admin-quiet-button { padding: 10px 16px; border: 1px solid #ece9e566; border-radius: 999px; background: transparent; color: #ece9e5; }
+.admin-quiet-button:hover { background: #ece9e514; }
+.admin-summary { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; color: #c6c2cd; font-size: 12px; }
+.admin-summary span:first-child { color: #edb7b3; font-weight: 600; }
+.admin-message-list { display: grid; gap: 16px; }
+.admin-message-card { padding: 23px; border: 1px solid #ece9e53d; border-radius: 18px; background: #ece9e50d; }
+.admin-message-meta { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+.admin-message-meta h2 { font-size: 28px; margin: 0 0 5px; }
+.admin-message-meta a { color: #edb7b3; font-size: 13px; }
+.admin-message-meta time { color: #c6c2cd; font-size: 11px; white-space: nowrap; }
+.admin-message-subject { color: #edb7b3; font-weight: 600; margin: 22px 0 8px; }
+.admin-message-body { color: #ece9e5; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.admin-delete-button { margin-top: 13px; padding: 8px 12px; border: 1px solid #edb7b366; border-radius: 999px; background: transparent; color: #edb7b3; font-size: 12px; }
+.admin-delete-button:hover { background: #edb7b314; }
+.admin-empty { padding: 75px 0; border-bottom: 1px solid #ece9e53d; }
+.admin-empty h2 { font-size: 42px; margin: 0 0 8px; }
+.admin-empty p { color: #c6c2cd; }
+.admin-status { margin: 18px 0; font-size: 13px; }
+.admin-status-error { color: #ffb4ad; }
+.admin-status-success { color: #b7e8bc; }
+.admin-back-link { display: inline-block; margin-top: 36px; color: #ece9e5; font-size: 13px; text-underline-offset: 5px; }
+@media (max-width: 620px) {
+  .admin-page { padding: 28px 20px; }
+  .admin-header, .admin-summary, .admin-message-meta { align-items: start; flex-direction: column; }
+  .admin-header-actions { width: 100%; }
+  .admin-quiet-button { flex: 1; }
+  .admin-primary-tabs button { flex: 1; }
+  .admin-two-column { grid-template-columns: 1fr; }
+  .admin-message-meta time { white-space: normal; }
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="960" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102c31"/>
+      <stop offset="1" stop-color="#0b1728"/>
+    </linearGradient>
+    <linearGradient id="building" x1="597" y1="181" x2="788" y2="395" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7aebbf"/>
+      <stop offset="1" stop-color="#2c8c7c"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#88dfc0" stroke-opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="url(#background)"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <circle cx="727" cy="273" r="200" fill="#5ce3b3" fill-opacity=".04"/>
+  <circle cx="727" cy="273" r="170" stroke="#5ce3b3" stroke-opacity=".15"/>
+  <rect x="67" y="125" width="126" height="31" rx="15.5" fill="#68e1b4" fill-opacity=".1" stroke="#68e1b4" stroke-opacity=".28"/>
+  <text x="130" y="146" text-anchor="middle" fill="#8bf0c8" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">MERN STACK</text>
+  <text x="65" y="241" fill="#f1faf6" font-family="Arial, sans-serif" font-size="66" font-weight="700" letter-spacing="-2">SchoolMgt</text>
+  <text x="68" y="287" fill="#aec6c2" font-family="Arial, sans-serif" font-size="24">School management application</text>
+  <path d="M68 324H440" stroke="#85dcba" stroke-opacity=".22"/>
+  <text x="68" y="363" fill="#83dbb6" font-family="Arial, sans-serif" font-size="17">MongoDB · Express · React · Node.js</text>
+  <ellipse cx="720" cy="412" rx="147" ry="22" fill="#030d17" fill-opacity=".45"/>
+  <path d="M573 278L697 210L842 278V393H573V278Z" fill="#174b49" stroke="#71d6b1" stroke-opacity=".5"/>
+  <path d="M638 224L708 169L778 224V394H638V224Z" fill="url(#building)"/>
+  <path d="M627 228L708 160L789 228" stroke="#b0f6d4" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M565 280L638 238M778 238L851 280" stroke="#67c9aa" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="708" cy="233" r="24" fill="#123d3e" stroke="#c2ffe2" stroke-width="4"/>
+  <path d="M708 217V233L721 240" stroke="#adf4d3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="684" y="324" width="48" height="70" rx="4" fill="#103c3d"/>
+  <path d="M708 325V394" stroke="#71c9b2" stroke-width="2"/>
+  <g fill="#98ebc8">
+    <rect x="591" y="300" width="24" height="30" rx="3"/>
+    <rect x="591" y="350" width="24" height="30" rx="3"/>
+    <rect x="800" y="300" width="24" height="30" rx="3"/>
+    <rect x="800" y="350" width="24" height="30" rx="3"/>
+  </g>
+  <g fill="#174b49">
+    <rect x="660" y="278" width="28" height="28" rx="3"/>
+    <rect x="728" y="278" width="28" height="28" rx="3"/>
+  </g>
+  <path d="M708 153V111" stroke="#95edc7" stroke-width="4"/>
+  <path d="M710 112H748L739 124L748 136H710V112Z" fill="#85edac"/>
+  <rect x="622" y="394" width="172" height="9" rx="3" fill="#81dcb9"/>
+  <rect x="610" y="403" width="196" height="8" rx="3" fill="#3f8b7b"/>
+</svg>

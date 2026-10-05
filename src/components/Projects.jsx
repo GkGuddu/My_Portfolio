@@ -1,96 +1,56 @@
-import React from "react";
-import { PROJECTS } from "../constants";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useRef, useState } from "react";
+import TiltCard from "./TiltCard";
+import { useMotion } from "./motion-context";
+import { usePortfolioContent } from "../use-portfolio-content";
 
-const Projects = () => {
-    return (
-        <section
-            id="projects"
-            className="w-full min-h-[90vh] flex items-center justify-center py-16 px-6 md:px-16 bg-gray-900"
-        >
-            <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center">
-                <h2
-                    className="text-3xl md:text-4xl font-bold mb-12 text-white"
-                    data-aos="fade-up"
-                    data-aos-duration="1500"
-                >
-                    My <span className="text-green-700">Projects</span>
-                </h2>
+export default function Projects() {
+  const { content } = usePortfolioContent();
+  const projects = content.projects;
+  const [featured, setFeatured] = useState(2);
+  const gallery = useRef(null);
+  const { paused } = useMotion();
+  const active = Math.min(featured, Math.max(projects.length - 1, 0));
+  const project = projects[active];
+  const previous = () => setFeatured((active - 1 + projects.length) % projects.length);
+  const next = () => setFeatured((active + 1) % projects.length);
+  const showPreview = (index) => {
+    setFeatured(index);
+    gallery.current?.focus({ preventScroll: true });
+    gallery.current?.scrollIntoView({ behavior: paused ? "auto" : "smooth", block: "center" });
+  };
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {PROJECTS.map((project, index) => (
-                        <div
-                            key={project.title}
-                            className="bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl overflow-hidden shadow-lg 
-                            hover:shadow-green-700/30 hover:-translate-y-2 
-                            transition-all duration-300 group"
-                            data-aos="fade-up"
-                            data-aos-duration="1500"
-                            data-aos-delay={100 + index * 100}
-                        >
-                            {/* Project Image */}
-                            <div className="relative w-full h-48 overflow-hidden">
-                                <img
-                                    src={project.image || "https://via.placeholder.com/400x300"}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                {project.link === "#" && project.github === "#" ? (
-                                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 backdrop-blur-md">
-                                        <div className="px-5 py-3 bg-green-950/45 border border-green-500/40 rounded-xl text-center transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.2)]">
-                                            <span className="text-lg font-extrabold text-green-400 tracking-wider uppercase animate-pulse block">
-                                                Coming Soon
-                                            </span>
-                                            <span className="text-xs text-gray-300 font-medium block mt-1">
-                                                Under Development
-                                            </span>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
-                                        {project.github !== "#" && (
-                                            <a
-                                                href={project.github}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-green-600 hover:border-green-600 transition-all duration-300 shadow-lg"
-                                                title="View Code"
-                                            >
-                                                <FaGithub size={20} />
-                                            </a>
-                                        )}
-                                        {project.link !== "#" && (
-                                            <a
-                                                href={project.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-green-600 hover:border-green-600 transition-all duration-300 shadow-lg"
-                                                title="Live Demo"
-                                            >
-                                                <FaExternalLinkAlt size={20} />
-                                            </a>
-                                        )}
-                                    </div>
-                                )}
-                            </div>
+  if (!projects.length) return null;
 
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">{project.title}</h3>
-                                <p className="text-gray-300 text-sm mb-4 line-clamp-3">{project.description}</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.techStack.map((tech, idx) => (
-                                        <span key={idx} className="px-3 py-1 text-xs font-medium text-green-300 bg-green-900/20 rounded-full border border-green-700/30">
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
-
-export default Projects;
+  return (
+    <section id="projects" className="adri-projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" className="adri-display-heading reveal-3d">Selected Work</h2>
+      <div className="adri-project-grid">
+        {projects.map((item, index) => (
+          <div className="reveal-3d" key={item.title} style={{ "--reveal-delay": `${index * 60}ms` }}>
+            <TiltCard as="article" className="adri-project-card" intensity={4}>
+              <span className="adri-project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <ul className="adri-project-tech" aria-label={`${item.title} technologies`}>{item.techStack.map((tech) => <li key={tech}>{tech}</li>)}</ul>
+              <div className="adri-project-links">
+                {item.link && item.link !== "#" && <a className="adri-text-link" href={item.link} target="_blank" rel="noopener noreferrer" aria-label={`Open ${item.title} live demo`}>View project ↗</a>}
+                {item.github && item.github !== "#" && <a className="adri-code-link" href={item.github} target="_blank" rel="noopener noreferrer" aria-label={`View ${item.title} source code`}>Code</a>}
+                {item.link === "#" && item.github === "#" && <span>Coming soon</span>}
+                {!item.link && !item.github && <button type="button" className="adri-text-link" onClick={() => showPreview(index)}>View preview ↓</button>}
+              </div>
+            </TiltCard>
+          </div>
+        ))}
+      </div>
+      <div ref={gallery} tabIndex={-1} className="adri-gallery reveal-3d" role="region" aria-roledescription="carousel" aria-label="Project previews">
+          <div className="adri-gallery-image" role="group" aria-roledescription="slide" aria-label={`${active + 1} of ${projects.length}: ${project.title}`}>
+          <img src={project.image} alt={`${project.title} preview`} width="960" height="540" loading="lazy" />
+        </div>
+        <div className="adri-gallery-controls">
+          <p aria-live="polite" aria-atomic="true"><span className="gallery-counter">{String(active + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</span>{project.title}</p>
+          <div><button type="button" onClick={previous} aria-label="Previous project preview">←</button><button type="button" onClick={next} aria-label="Next project preview">→</button></div>
+        </div>
+      </div>
+    </section>
+  );
+}

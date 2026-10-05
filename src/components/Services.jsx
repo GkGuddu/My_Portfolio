@@ -1,48 +1,20 @@
-import React from "react";
 import { SERVICES } from "../constants";
 
-const Services = () => {
-
-
+export default function Services() {
   return (
-    <section
-      id="services"
-      className="w-full min-h-[90vh] flex items-center justify-center py-16 px-6 md:px-16 bg-gray-900"
-    >
-      <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center">
-        <h2
-          className="text-3xl md:text-4xl font-bold mb-12 text-white"
-          data-aos="fade-up"
-          data-aos-duration="1500"
-        >
-          My <span className="text-green-700">Services</span>
-        </h2>
-
-        {/* Grid of Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SERVICES.map((service, index) => (
-            <div
-              key={service.title}
-              className="bg-gray-800/70 p-6 rounded-xl shadow-lg 
-                         hover:shadow-green-700/50 hover:-translate-y-2 
-                         transition-all duration-300 cursor-pointer"
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay={100 + index * 100}
-            >
-              <div className="flex items-center justify-center mb-4">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-white text-center">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-gray-300 text-center">{service.desc}</p>
-            </div>
-          ))}
-        </div>
+    <section id="services" className="adri-services" aria-labelledby="services-title">
+      <div className="adri-services-heading reveal-3d">
+        <p className="adri-eyebrow">LET’S MAKE IT HAPPEN</p>
+        <h2 id="services-title">How I can help</h2>
+        <p>Thoughtful interfaces. Reliable systems. From the first idea to the final interaction.</p>
+        <a className="adri-text-link" href="#contact">Let’s talk ↗</a>
+      </div>
+      <div className="adri-service-list reveal-3d">
+        {SERVICES.map((service, index) => <details key={service.title} open={index === 0 ? true : undefined}>
+          <summary><span>{service.title}</span><span className="service-disclosure" aria-hidden="true">+</span></summary>
+          <p>{service.desc}</p>
+        </details>)}
       </div>
     </section>
   );
-};
-
-export default Services;
+}
