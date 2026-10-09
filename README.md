@@ -95,6 +95,8 @@ Open **http://localhost:3001** (or your configured port). `npm start` sets produ
 
 GitHub Pages can host only the frontend. The existing `npm run deploy` command builds with `/My_Portfolio/` and publishes the static files. To make contact submissions work there, deploy the API to a Node host, set `VITE_API_URL` before building, and allow `https://gkguddu.github.io` in the API's `CLIENT_ORIGIN`.
 
+On Vercel, `vercel.json` rewrites `/admin` to the SPA entry point so the dashboard loads when opened directly. The API still needs to be deployed to a Node host; set `VITE_API_URL` to that backend's origin when building the frontend.
+
 ## Checks
 
 ```sh
