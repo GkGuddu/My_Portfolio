@@ -12,7 +12,7 @@ export default function Home() {
       </div>
       <div className="adri-hero-photo reveal-3d">
         <TiltCard className="adri-portrait" intensity={4}>
-          <img src={`${import.meta.env.BASE_URL}Profile-lavender.png`} alt="Guddu Kumar, MERN stack developer" width="768" height="872" fetchPriority="high" />
+          <img src={`${import.meta.env.BASE_URL}Profile-white-shirt.png`} alt="Guddu Kumar, MERN stack developer" width="768" height="840" fetchPriority="high" />
         </TiltCard>
         <p className="portrait-caption"><span>Based in India</span><span>Code with care.</span></p>
       </div>
