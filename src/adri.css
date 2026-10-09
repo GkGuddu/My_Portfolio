@@ -39,9 +39,9 @@
 .adri-hero-description { max-width: 570px; font-family: "Libre Caslon Display", Georgia, serif; font-size: clamp(25px, 2.5vw, 35px); line-height: 1.13; letter-spacing: -.02em; margin-bottom: 38px; }
 .adri-hero .adri-button { width: min(100%, 320px); min-height: 60px; }
 .hero-work-link { display: flex; width: fit-content; font-size: 12px; margin-top: 24px; }
-.adri-hero-photo { width: 100%; max-width: 420px; justify-self: end; }
+.adri-hero-photo { width: 100%; max-width: 490px; justify-self: end; }
 .adri-portrait { border-radius: 55px; background: var(--portrait-backdrop); }
-.adri-portrait img { display: block; width: 100%; aspect-ratio: 768 / 840; height: auto; object-fit: contain; object-position: center; border-radius: inherit; }
+.adri-portrait img { display: block; width: 100%; aspect-ratio: 768 / 840; height: auto; object-fit: contain; object-position: center; border-radius: inherit; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .portrait-caption { display: flex; justify-content: space-between; gap: 15px; margin-top: 15px; font-size: 10px; }
 .adri-nav-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .adri-admin-button { display: inline-grid; place-items: center; width: 44px; height: 44px; color: var(--ink); border-radius: 50%; }
@@ -234,7 +234,7 @@ fieldset:disabled .send-button { cursor: wait; }
   .adri-hero-description { font-size: 28px; max-width: 440px; margin-bottom: 27px; }
   .adri-hero .adri-button { min-height: 52px; }
   .hero-work-link { margin-top: 19px; }
-  .adri-hero-photo { width: 100%; max-width: 380px; justify-self: center; }
+  .adri-hero-photo { width: 100%; max-width: 440px; justify-self: center; }
   .adri-portrait img { aspect-ratio: 768 / 840; object-position: center; }
   .adri-portrait { border-radius: 36px; }
   .portrait-caption { font-size: 9px; }
